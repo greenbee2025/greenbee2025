@@ -106,13 +106,18 @@
     }
 
   
+ .mobile-message {
+      display: none;
+    }
+
     @media (max-width: 768px) {
       body {
+        background-color: white;
         display: flex;
         justify-content: center;
         align-items: center;
         height: 100vh;
-        background-color: white;
+        margin: 0;
       }
 
       header, main, footer, marquee {
@@ -120,11 +125,19 @@
       }
 
       .mobile-message {
-        display: block;
-        text-align: center;
-        font-size: 1.5rem;
-        color: black;
-      }
+  display: block;
+  text-align: center; /* 텍스트를 가운데 정렬 */
+  font-size: 9px;
+  font-weight: normal;
+  color: black;
+
+  /* 화면 가운데로 정렬 */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
     }
   </style>
 </head>
@@ -195,7 +208,7 @@
   <footer>
     <p>&copy; 2025 Greenbee</p>
   </footer>
-  <div class="mobile-message" style="display: none;">
+  <div class="mobile-message">
     모바일 버전은 지원하지 않습니다.
   </div>
 </body>
